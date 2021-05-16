@@ -1,5 +1,24 @@
 spring:
   datasource:
     hikari:
-
-      data-source-j-n-d-i:
+      minimum-idle: 10
+      maximum-pool-size: 100
+      connection-timeout: 300000
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/mangachan
+    username: mangachan
+    password: mangachan
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        default_catalog: mangachan
+        default_schema: public
+        format_sql: true
+        show-sql: true
+        hbm2ddl.import_files: sql/data.sql
+    database: postgresql
