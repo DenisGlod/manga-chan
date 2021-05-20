@@ -1,16 +1,16 @@
 package com.mangachan.service;
 
-import com.mangachan.service.bean.BookBean;
+import com.mangachan.service.dto.BookDto;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface BookService {
-    List<BookBean> getAllBook();
+    List<BookDto> getAllBook();
 
-    Optional<BookBean> findById(Integer id);
+    Optional<BookDto> findById(Integer id);
 
-    Optional<BookBean> save(BookBean bean);
+    Optional<BookDto> save(BookDto bean);
 
-    Optional<BookBean> delete(BookBean bean);
+    Optional<BookDto> delete(BookDto bean);
 }

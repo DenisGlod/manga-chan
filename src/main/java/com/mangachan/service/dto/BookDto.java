@@ -1,4 +1,4 @@
-package com.mangachan.service.bean;
+package com.mangachan.service.dto;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Data
-public class BookBean {
+public class BookDto {
     private Long id;
     private String name;
     private String author;

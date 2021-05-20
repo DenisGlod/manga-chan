@@ -1,18 +1,18 @@
 package com.mangachan.service;
 
-import com.mangachan.service.bean.UserBean;
+import com.mangachan.service.dto.UserDto;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
-    List<UserBean> getAllUser();
+    List<UserDto> getAllUser();
 
-    Optional<UserBean> findUserById(Long id);
+    Optional<UserDto> findUserById(Long id);
 
-    Optional<UserBean> login(String email, String password);
+    Optional<UserDto> login(String email, String password);
 
-    UserBean save(UserBean bean);
+    UserDto save(UserDto bean);
 
-    Optional<UserBean> delete(UserBean bean);
+    Optional<UserDto> delete(UserDto bean);
 }

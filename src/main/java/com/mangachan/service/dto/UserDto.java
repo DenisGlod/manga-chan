@@ -1,4 +1,4 @@
-package com.mangachan.service.bean;
+package com.mangachan.service.dto;
 
 import lombok.*;
 
@@ -7,11 +7,11 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Data
-public class UserBean {
+public class UserDto {
     private Long id;
     private String email;
     private String password;
-    private RoleBean role;
-    private UserDataBean userData;
+    private RoleDto role;
+    private UserDataDto userData;
 
 }

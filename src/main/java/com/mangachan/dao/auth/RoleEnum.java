@@ -1,4 +1,4 @@
-package com.mangachan.dao.entity;
+package com.mangachan.dao.auth;
 
 public enum RoleEnum {
     ADMIN,

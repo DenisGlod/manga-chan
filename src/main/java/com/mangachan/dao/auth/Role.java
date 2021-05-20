@@ -1,4 +1,4 @@
-package com.mangachan.dao.entity;
+package com.mangachan.dao.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +26,7 @@ import java.util.Set;
 @Builder
 @Data
 @Entity
-public class Role {
+public class Role implements GrantedAuthority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,4 +39,8 @@ public class Role {
     @OneToMany(mappedBy = "role")
     private final Set<User> users = new HashSet<>();
 
+    @Override
+    public String getAuthority() {
+        return getName().name();
+    }
 }

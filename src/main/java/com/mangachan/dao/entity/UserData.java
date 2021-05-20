@@ -1,5 +1,6 @@
 package com.mangachan.dao.entity;
 
+import com.mangachan.dao.auth.User;
 import lombok.*;
 
 import javax.persistence.*;

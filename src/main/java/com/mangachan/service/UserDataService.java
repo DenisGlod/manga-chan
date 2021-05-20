@@ -1,16 +1,16 @@
 package com.mangachan.service;
 
-import com.mangachan.service.bean.UserDataBean;
+import com.mangachan.service.dto.UserDataDto;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface UserDataService {
-    List<UserDataBean> getAllUserData();
+    List<UserDataDto> getAllUserData();
 
-    Optional<UserDataBean> findById(Long id);
+    Optional<UserDataDto> findById(Long id);
 
-    Optional<UserDataBean> save(UserDataBean bean);
+    Optional<UserDataDto> save(UserDataDto bean);
 
-    Optional<UserDataBean> delete(UserDataBean bean);
+    Optional<UserDataDto> delete(UserDataDto bean);
 }

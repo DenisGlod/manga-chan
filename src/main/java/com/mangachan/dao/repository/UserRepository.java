@@ -1,6 +1,6 @@
 package com.mangachan.dao.repository;
 
-import com.mangachan.dao.entity.User;
+import com.mangachan.dao.auth.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

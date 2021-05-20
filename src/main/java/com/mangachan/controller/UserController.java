@@ -1,7 +1,7 @@
 package com.mangachan.controller;
 
 import com.mangachan.service.UserService;
-import com.mangachan.service.bean.UserBean;
+import com.mangachan.service.dto.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,13 +24,13 @@ public class UserController {
     private final UserService service;
 
     @GetMapping("/getAll")
-    public List<UserBean> getAllUsers() {
+    public List<UserDto> getAllUsers() {
         return service.getAllUser();
     }
 
     @GetMapping("/get")
     public ResponseEntity<?> getUserById(@RequestParam(name = "id") Long id) {
-        Optional<UserBean> optionalUserBean = service.findUserById(id);
+        Optional<UserDto> optionalUserBean = service.findUserById(id);
         if (optionalUserBean.isPresent()) {
             return ResponseEntity
                     .ok(optionalUserBean.get());
@@ -42,14 +42,14 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public UserBean saveOrUpdateUser(@RequestBody UserBean userBean) {
-        return service.save(userBean);
+    public UserDto saveOrUpdateUser(@RequestBody UserDto userDto) {
+        return service.save(userDto);
     }
 
     @PostMapping(path = "/login", consumes = "application/x-www-form-urlencoded")
     public ResponseEntity<?> findUserByEmailAndPassword(@RequestParam(name = "email") String email,
                                                         @RequestParam(name = "password") String password) {
-        Optional<UserBean> optionalUserBean = service.login(email, password);
+        Optional<UserDto> optionalUserBean = service.login(email, password);
         if (optionalUserBean.isPresent()) {
             return ResponseEntity
                     .ok(optionalUserBean.get());

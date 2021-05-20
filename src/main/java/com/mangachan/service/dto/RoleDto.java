@@ -1,6 +1,6 @@
-package com.mangachan.service.bean;
+package com.mangachan.service.dto;
 
-import com.mangachan.dao.entity.RoleEnum;
+import com.mangachan.dao.auth.RoleEnum;
 import lombok.*;
 
 @EqualsAndHashCode
@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Data
-public class RoleBean {
+public class RoleDto {
     private Long id;
     private RoleEnum role;
 

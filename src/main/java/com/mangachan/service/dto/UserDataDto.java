@@ -1,4 +1,4 @@
-package com.mangachan.service.bean;
+package com.mangachan.service.dto;
 
 import lombok.*;
 
@@ -9,7 +9,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 @Data
-public class UserDataBean {
+public class UserDataDto {
     private Long id;
     private String firstName;
     private String lastName;
