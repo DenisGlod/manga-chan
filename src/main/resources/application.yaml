@@ -11,6 +11,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     open-in-view: false
+    show-sql: true
     hibernate:
       ddl-auto: create
     properties:
@@ -20,5 +21,6 @@ spring:
         default_schema: public
         format_sql: true
         show-sql: true
-        hbm2ddl.import_files: sql/data.sql
+        hbm2ddl:
+          import_files: sql/data.sql
     database: postgresql
