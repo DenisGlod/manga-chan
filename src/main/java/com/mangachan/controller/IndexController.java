@@ -12,9 +12,14 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping(path = {"/login", ""}, method = RequestMethod.GET)
+    @RequestMapping(path = {"/login.html"}, method = RequestMethod.GET)
     public String login() {
         return "page/login";
+    }
+
+    @RequestMapping(path = {"/info.html"}, method = RequestMethod.GET)
+    public String info() {
+        return "page/info";
     }
 
 }

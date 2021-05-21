@@ -16,7 +16,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.HashSet;
 import java.util.Set;
 
 @EqualsAndHashCode
@@ -37,7 +36,7 @@ public class Role implements GrantedAuthority {
     private RoleEnum name;
 
     @OneToMany(mappedBy = "role")
-    private final Set<User> users = new HashSet<>();
+    private Set<User> users;
 
     @Override
     public String getAuthority() {

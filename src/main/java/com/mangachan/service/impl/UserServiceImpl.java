@@ -1,10 +1,13 @@
 package com.mangachan.service.impl;
 
+import com.mangachan.dao.auth.User;
 import com.mangachan.dao.repository.UserRepository;
 import com.mangachan.service.UserService;
 import com.mangachan.service.dto.UserDto;
 import com.mangachan.service.util.Converter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,34 +18,32 @@ import java.util.Optional;
 @Transactional
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    private final UserRepository repository;
+    private final UserRepository userRepository;
 
     @Override
     public List<UserDto> getAllUser() {
-        var userList = repository.findAll();
-        return Converter.userEntityToUserBean(userList);
+        var userList = userRepository.findAll();
+        return Converter.userEntityToUserDto(userList);
     }
 
     @Override
     public Optional<UserDto> findUserById(Long id) {
-        var userOptional = repository.findUserById(id);
-        return userOptional.map(Converter::userEntityToUserBean);
-    }
-
-    @Override
-    public Optional<UserDto> login(String email, String password) {
-        var userOptional = repository.findUserByEmailAndPassword(email, password);
-        return userOptional.map(Converter::userEntityToUserBean);
+        var userOptional = userRepository.findById(id);
+        return userOptional.map(Converter::userEntityToUserDto);
     }
 
     @Override
     public UserDto save(UserDto bean) {
-        var user = repository.save(Converter.userBeanToUserEntity(bean));
-        return Converter.userEntityToUserBean(user);
+        var user = userRepository.save(Converter.userDtoToUserEntity(bean));
+        return Converter.userEntityToUserDto(user);
     }
 
     @Override
-    public Optional<UserDto> delete(UserDto bean) {
-        return Optional.empty();
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Optional<User> userOptional = userRepository.findByUsername(username);
+        return userOptional.orElseThrow(() -> {
+            throw new UsernameNotFoundException(String.format("User %s not found", username));
+        });
     }
+
 }

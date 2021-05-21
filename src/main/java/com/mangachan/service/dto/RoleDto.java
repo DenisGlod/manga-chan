@@ -1,7 +1,11 @@
 package com.mangachan.service.dto;
 
 import com.mangachan.dao.auth.RoleEnum;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @EqualsAndHashCode
 @NoArgsConstructor
@@ -10,6 +14,5 @@ import lombok.*;
 @Data
 public class RoleDto {
     private Long id;
-    private RoleEnum role;
-
+    private RoleEnum name;
 }
