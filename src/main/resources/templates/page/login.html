@@ -11,16 +11,16 @@
 <!-- Begin page content -->
 <main class="flex-shrink-0 form">
     <div class="form-signin text-center">
-        <form data-th-action="@{/login}" method="post">
+        <form action="#" data-th-action="@{/login}" method="post">
             <h4 class="h4 mb-3 fw-normal">Войти в аккаунт</h4>
 
             <div class="form-floating">
-                <input name="login" type="text" class="form-control" id="floatingInput" placeholder="Логин">
-                <label for="floatingInput">Логин</label>
+                <input name="login" type="text" class="form-control" id="login" placeholder="Логин">
+                <label for="login">Логин</label>
             </div>
             <div class="form-floating">
-                <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
-                <label for="floatingPassword">Пароль</label>
+                <input name="password" type="password" class="form-control" id="password" placeholder="Пароль">
+                <label for="password">Пароль</label>
             </div>
 
             <div class="mb-3">
@@ -33,10 +33,10 @@
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">ВОЙТИ</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
-            <input
+<!--            <input
                     type="hidden"
-                    th:name="${_csrf.parameterName}"
-                    th:value="${_csrf.token}" />
+                    data-th-name="${_csrf.parameterName}"
+                    data-th-value="${_csrf.token}" />-->
         </form>
     </div>
 </main>

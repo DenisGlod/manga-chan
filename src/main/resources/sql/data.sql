@@ -1,6 +1,6 @@
-INSERT INTO role (name) VALUES ('ROLE_ADMIN');
-INSERT INTO role (name) VALUES ('ROLE_MODERATOR');
-INSERT INTO role (name) VALUES ('ROLE_USER');
+INSERT INTO role (name) VALUES ('ADMIN');
+INSERT INTO role (name) VALUES ('MODERATOR');
+INSERT INTO role (name) VALUES ('USER');
 
 -- INSERT INTO user_data(age, first_name, last_name, middle_name) VALUES ('1991-02-05', 'Евгений', 'Сидоренко', 'Иванович');
 -- INSERT INTO user_data(age, first_name, last_name, middle_name) VALUES ('1993-01-08', 'Михаил', 'Петров', 'Евгеньевич');
