@@ -24,3 +24,8 @@ spring:
           import_files: sql/data.sql
           auto: create
     database: postgresql
+server:
+  servlet:
+    session:
+      cookie:
+        name: mangachan
