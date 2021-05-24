@@ -16,8 +16,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .csrf()
-                .disable()
             .authorizeRequests()
                 .antMatchers("/", "/index.html", "/login.html").permitAll()
                 .antMatchers("/info.html").authenticated()
@@ -29,12 +27,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .passwordParameter("password")
                     .defaultSuccessUrl("/info.html")
                 .and()
-                    .httpBasic()
-                .and()
                     .logout()
-                    .deleteCookies("JSESSIONID")
+                    .deleteCookies("mangachan")
                     .invalidateHttpSession(true)
-                    .logoutSuccessUrl("/");
+                    .logoutSuccessUrl("/")
+                .and()
+                    .httpBasic();
     }
 
     @Bean

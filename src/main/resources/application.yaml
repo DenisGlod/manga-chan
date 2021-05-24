@@ -29,3 +29,6 @@ server:
     session:
       cookie:
         name: mangachan
+  error:
+    whitelabel:
+      enabled: false
