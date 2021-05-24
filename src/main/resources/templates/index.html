@@ -28,12 +28,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" data-th-href="@{/css/mangachan.css}">
     <link rel="icon" type="img/png" data-th-href="@{/img/favicon.ico}">
     <title data-th-text="${title} + ' - Manga-Chan'"></title>
 </head>
 <body>
-<header class="shadow-sm rounded">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<header class="shadow rounded">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
         <div class="container">
             <a href="#" data-th-href="@{/}" class="navbar-brand">Manga-Chan</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,8 +56,10 @@
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Что ищем..." aria-label="Что ищем...">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
+                    <div class="input-group input-group-sm">
+                        <input class="form-control" type="search" placeholder="Что ищем..." aria-label="Что ищем..." aria-describedby="basic-addon1">
+                        <button class="btn btn-outline-light bi bi-search" type="submit" id="basic-addon1"></button>
+                    </div>
                 </form>
             </div>
         </div>
