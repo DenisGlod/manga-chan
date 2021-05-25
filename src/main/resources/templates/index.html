@@ -33,9 +33,9 @@
     <title data-th-text="${title} + ' - Manga-Chan'"></title>
 </head>
 <body>
-<header class="shadow rounded">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
-        <div class="container">
+<header class="shadow-sm rounded">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
+        <div class="container my-1">
             <a href="#" data-th-href="@{/}" class="navbar-brand">Manga-Chan</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -49,18 +49,44 @@
                         <a class="nav-link" href="#">Каталог</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Случайная манга</a>
+                        <a class="nav-link bi bi-shuffle" href="#"></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Хентай манга</a>
+                    <li class="me-"></li>
+                </ul>
+                <ul class="navbar-nav d-flex">
+                    <li class="nav-item m-2">
+                        <div class="input-group">
+                            <input class="form-control form-control-dark form-control-search" type="search" placeholder="Что ищем..." aria-label="Что ищем..." aria-describedby="basic-addon1">
+                        </div>
+                    </li>
+                    <li class="nav-item m-2 justify-content-center align-content-center">
+                        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalLogin">Войти</button>
                     </li>
                 </ul>
+
                 <form class="d-flex">
-                    <div class="input-group input-group-sm">
-                        <input class="form-control" type="search" placeholder="Что ищем..." aria-label="Что ищем..." aria-describedby="basic-addon1">
-                        <button class="btn btn-outline-light bi bi-search" type="submit" id="basic-addon1"></button>
+                    <div class="input-group mx-3">
+                        <input class="form-control form-control-dark form-control-search" type="search" placeholder="Что ищем..." aria-label="Что ищем..." aria-describedby="basic-addon1">
                     </div>
                 </form>
+                <button type="button" class="btn btn-outline-warning my-2" data-bs-toggle="modal" data-bs-target="#modalLogin">Войти</button>
+                <div class="modal fade" tabindex="-1" id="modalLogin">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Modal body text goes here.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
