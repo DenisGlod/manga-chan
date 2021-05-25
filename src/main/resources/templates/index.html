@@ -35,7 +35,7 @@
 <body>
 <header class="shadow-sm rounded">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
-        <div class="container my-1">
+        <div class="container">
             <a href="#" data-th-href="@{/}" class="navbar-brand">Manga-Chan</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -51,38 +51,44 @@
                     <li class="nav-item">
                         <a class="nav-link bi bi-shuffle" href="#"></a>
                     </li>
-                    <li class="me-"></li>
                 </ul>
-                <ul class="navbar-nav d-flex">
-                    <li class="nav-item m-2">
-                        <div class="input-group">
-                            <input class="form-control form-control-dark form-control-search" type="search" placeholder="Что ищем..." aria-label="Что ищем..." aria-describedby="basic-addon1">
-                        </div>
-                    </li>
-                    <li class="nav-item m-2 justify-content-center align-content-center">
-                        <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalLogin">Войти</button>
-                    </li>
-                </ul>
-
-                <form class="d-flex">
-                    <div class="input-group mx-3">
-                        <input class="form-control form-control-dark form-control-search" type="search" placeholder="Что ищем..." aria-label="Что ищем..." aria-describedby="basic-addon1">
+                <form class="d-flex mx-3">
+                    <div class="input-group">
+                        <input class="form-control form-control-sm form-control-dark form-control-search" type="search" placeholder="Что ищем..." aria-label="Что ищем..." aria-describedby="basic-addon1">
                     </div>
                 </form>
-                <button type="button" class="btn btn-outline-warning my-2" data-bs-toggle="modal" data-bs-target="#modalLogin">Войти</button>
+                <button type="button" class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalLogin">Войти</button>
                 <div class="modal fade" tabindex="-1" id="modalLogin">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
+                        <div class="modal-content form-signin text-center">
+                            <!--<div class="modal-header">
                                 <h5 class="modal-title">Modal title</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
+                            </div>-->
                             <div class="modal-body">
-                                <p>Modal body text goes here.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <div class="float-end">
+                                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <form>
+                                    <h1 class="h3 mb-3 fw-normal">Войти в аккаунт</h1>
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="floatingInput" placeholder="Логин...">
+                                        <label for="floatingInput">Логин</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <label for="floatingPassword">Пароль</label>
+                                    </div>
+
+                                    <div class="checkbox mb-3">
+                                        <label>
+                                            <input type="checkbox" value="remember-me"> Запомнить меня
+                                        </label>
+                                    </div>
+                                    <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+                                    <p class="mt-5 mb-3 text-muted">© 2021</p>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,6 @@
     text-shadow: 1px 1px 2px black, 0 0 1em white;
     color: white;
 }
-
 .form-control-search:hover {
     box-shadow: 1px 1px 2px black, 0 0 1em white;
 }
@@ -17,4 +16,9 @@
     background-color: var(--bs-dark);
     border-color: #fff;
     box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
 }
