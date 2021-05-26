@@ -59,35 +59,30 @@
                 </form>
                 <button type="button" class="btn btn-sm btn-outline-warning" data-bs-toggle="modal" data-bs-target="#modalLogin">Войти</button>
                 <div class="modal fade" tabindex="-1" id="modalLogin">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content form-signin text-center">
-                            <!--<div class="modal-header">
-                                <h5 class="modal-title">Modal title</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>-->
+                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                        <div class="modal-content form-signin text-center bg-light">
                             <div class="modal-body">
-                                <div class="float-end">
-                                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="d-flex justify-content-end mb-1">
+                                    <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-
                                 <form>
-                                    <h1 class="h3 mb-3 fw-normal">Войти в аккаунт</h1>
+                                    <h1 class="h3 my-3 fw-normal">Войти в аккаунт</h1>
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="floatingInput" placeholder="Логин...">
+                                        <input name="login" type="text" class="form-control" id="floatingInput" placeholder="Логин">
                                         <label for="floatingInput">Логин</label>
                                     </div>
                                     <div class="form-floating">
-                                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
                                         <label for="floatingPassword">Пароль</label>
                                     </div>
 
-                                    <div class="checkbox mb-3">
+                                    <div class="checkbox my-3">
                                         <label>
                                             <input type="checkbox" value="remember-me"> Запомнить меня
                                         </label>
                                     </div>
                                     <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
-                                    <p class="mt-5 mb-3 text-muted">© 2021</p>
+                                    <p class="mt-3 text-muted">Manga-Chan © 2021</p>
                                 </form>
                             </div>
                         </div>
