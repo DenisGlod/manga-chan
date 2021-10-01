@@ -1,7 +1,8 @@
-.nav-link:hover,.navbar-brand:hover  {
+.nav-link:hover, .navbar-brand:hover {
     text-shadow: 1px 1px 2px black, 0 0 1em white;
     color: white;
 }
+
 .form-control-search:hover {
     box-shadow: 1px 1px 2px black, 0 0 1em white;
 }
@@ -11,25 +12,30 @@
     background-color: var(--bs-dark);
     border-color: var(--bs-gray);
 }
+
 .form-control-dark:focus {
     color: #fff;
     background-color: var(--bs-dark);
     border-color: #fff;
     box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
 }
+
 .form-signin {
     width: 100%;
     /*max-width: 330px;*/
     padding: 15px;
 }
+
 .form-signin .form-floating:focus-within {
     z-index: 2;
 }
+
 .form-signin input[name="login"] {
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
+
 .form-signin input[name="password"] {
     margin-bottom: 10px;
     border-top-left-radius: 0;
