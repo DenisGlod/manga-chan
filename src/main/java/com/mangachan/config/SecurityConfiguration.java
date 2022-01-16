@@ -1,10 +1,7 @@
 package com.mangachan.config;
 
-import com.mangachan.dao.entity.User;
 import com.mangachan.service.UserService;
-import com.mangachan.service.dto.UserDto;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 @Configuration
 @EnableWebSecurity
@@ -24,26 +22,27 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		// @formatter:off
         http
             .authorizeRequests()
-                /*.antMatchers("/").permitAll()
-                .anyRequest().authenticated()*/
-				.anyRequest().permitAll()
+                .antMatchers("/", "/login").permitAll()
+                .anyRequest().authenticated()
+//				.anyRequest().permitAll()
                 .and()
-/*            .formLogin()
+            .formLogin()
                 .loginPage("/login.html")
                 .loginProcessingUrl("/login")
-                .defaultSuccessUrl("/info.html")
-                .usernameParameter("login")
-                .passwordParameter("password")
+                .defaultSuccessUrl("/success")
+//                .usernameParameter("login")
+//                .passwordParameter("password")
                 .permitAll()
                 .and()
             .logout()
+				.logoutUrl("/logout")
 				.logoutSuccessUrl("/")
 				.deleteCookies("mangachan")
 				.invalidateHttpSession(true)
-                .and()*/
+                .and()
             .httpBasic()
                 .and()
-            .csrf().disable();
+            .csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
         // @formatter:on
 	}
 
@@ -66,4 +65,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		authenticationProvider.setUserDetailsService(userService);
 		return authenticationProvider;
 	}
+
 }

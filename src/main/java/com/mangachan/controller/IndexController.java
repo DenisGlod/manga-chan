@@ -38,4 +38,9 @@ public class IndexController {
 		return userService.findUserById(id);
 	}
 
+	@RequestMapping(path = {"/success"}, method = RequestMethod.GET)
+	public ResponseEntity<?> success() {
+		return ResponseEntity.ok().body("success");
+	}
+
 }
