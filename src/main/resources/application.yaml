@@ -12,17 +12,14 @@ spring:
   jpa:
     open-in-view: false
     show-sql: true
-#    hibernate:
-#      ddl-auto: drop
+    hibernate:
+      ddl-auto: create
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL10Dialect
         default_catalog: mangachan
         default_schema: public
         format_sql: true
-        hbm2ddl:
-          import_files: sql/data.sql
-          auto: create
     database: postgresql
 server:
   servlet:

@@ -13,6 +13,8 @@ public interface UserService extends UserDetailsService {
 
     Optional<UserDto> findUserById(Long id);
 
+    Optional<UserDto> findUserByUsername(UserDto userDto);
+
     UserDto save(UserDto bean);
 
     @Override

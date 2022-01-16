@@ -1,34 +1,41 @@
 package com.mangachan.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import com.mangachan.service.UserService;
+import com.mangachan.service.dto.UserDto;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequiredArgsConstructor
 public class IndexController {
-    @ModelAttribute
-    public void addTittle(Model model) {
-        model.addAttribute("title", "Читать мангу онлайн");
-    }
+	private final UserService userService;
 
-    @RequestMapping(path = {"/", "/index.html"}, method = RequestMethod.GET)
-    public ModelAndView index(ModelAndView modelAndView) {
-        modelAndView.addObject("title", "Читать мангу онлайн");
-        modelAndView.setViewName("index");
-        return modelAndView;
-    }
+	@RequestMapping(path = {"/all-users"}, method = RequestMethod.GET)
+	public List<UserDto> allUsers() {
+		return userService.getAllUser();
+	}
 
-    @RequestMapping(path = {"/login.html"}, method = RequestMethod.GET)
-    public String login() {
-        return "page/login";
-    }
+	@RequestMapping(path = {"/add-user"}, method = RequestMethod.POST)
+	public ResponseEntity<?> addUser(@RequestBody UserDto userDto) {
+		Optional<UserDto> user = userService.findUserByUsername(userDto);
+		if (user.isPresent()) {
+			return ResponseEntity.ok().body("Пользователь существует!");
+		} else {
+			return ResponseEntity.ok().body(userService.save(userDto));
+		}
+	}
 
-    @RequestMapping(path = {"/info.html"}, method = RequestMethod.GET)
-    public String info() {
-        return "page/info";
-    }
+	@RequestMapping(path = {"/get-user-by-id/{id}"}, method = RequestMethod.GET)
+	public Optional<UserDto> getUserById(@PathVariable("id") Long id) {
+		return userService.findUserById(id);
+	}
 
 }
