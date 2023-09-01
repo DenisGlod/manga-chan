@@ -8,4 +8,10 @@
         <version>2.4.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <groupId>com.mangachan</groupId>
+    <artifactId>manga-chan</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>manga-chan</name>
+    <description>Demo project for Spring Boot</description>
+         
 </project>
